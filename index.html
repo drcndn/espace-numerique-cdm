@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ton chemin vers un métier · Cité des Métiers de Charleroi</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&amp;display=swap">
+<style>
+body{margin:0;background:#14233a}
+a{color:#14233a}a:hover{color:#14233a}
+.case{transition:transform .18s ease}
+.case:hover,.case:focus-visible{transform:translateY(-6px) rotate(-1deg)}
+.case:focus-visible{outline:4px solid #68c8f1;outline-offset:4px}
+.chip{transition:transform .15s ease, background .15s ease}
+.chip:hover{transform:translateY(-3px)}
+.chip:focus-visible,.reset:focus-visible{outline:4px solid #f39008;outline-offset:3px}
+</style>
+
+</head>
+<body>
+
+<div style="font-family: Montserrat, system-ui, sans-serif; color: #ffffff; min-height: 100vh; background: #14233a; position: relative; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; left: -120px; bottom: -140px; width: 320px; height: 320px; border-radius: 50%; background: #a58cc4"></div>
+  <div aria-hidden="true" style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; background: #f39008; transform: rotate(24deg); border-radius: 24px"></div>
+  <div aria-hidden="true" style="position: absolute; right: 150px; top: 120px; width: 90px; height: 90px; border-radius: 50%; background: #5fc59e"></div>
+
+  <div style="position: relative; max-width: 1280px; margin: 0 auto; padding: 36px 48px 44px; display: flex; flex-direction: column; gap: 26px">
+
+    <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+      <span style="background: #ec1b25; color: #ffffff; font-weight: 900; font-size: 15px; letter-spacing: .08em; padding: 10px 16px; border-radius: 6px">CITÉ DES MÉTIERS</span>
+      <span style="font-weight: 700; font-size: 15px; letter-spacing: .08em">CHARLEROI</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h1 style="margin: 0; font-weight: 900; font-size: 56px; line-height: 1.02; text-transform: uppercase; color: #68c8f1">Ton chemin<br>vers un métier</h1>
+      <p style="margin: 0; font-size: 22px; font-weight: 600; line-height: 1.4; max-width: 760px">Suis les cases dans l'ordre, ou saute directement à celle qui te parle.</p>
+    </div>
+
+    <section aria-label="Choisis ta situation" style="background: rgba(255,255,255,.07); border: 2px solid rgba(104,200,241,.45); border-radius: 22px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+        <span style="font-size: 24px; font-weight: 900; text-transform: uppercase; color: #68c8f1">Tu es…</span>
+        <span style="font-size: 16px; font-weight: 600">Clique sur ce qui te ressemble, on te montre par où commencer.</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <span id="chips" style="display:contents"></span>
+        <div data-if="hasSel" style="display:contents">
+          <button class="reset" type="button" data-click="reset" style="background: none; border: none; color: #68c8f1; font-family: inherit; font-size: 16px; font-weight: 700; text-decoration: underline; cursor: pointer; padding: 12px 8px; min-height: 48px">Tout voir</button>
+        </div>
+      </div>
+      <div data-if="hasSel" style="display:contents">
+        <p style="margin: 0; display: flex; gap: 10px; align-items: flex-start; font-size: 18px; font-weight: 700; line-height: 1.4; color: #ffffff">
+          <span aria-hidden="true" style="color: #f39008">★</span>
+          <span><span data-t="conseil"></span></span>
+        </p>
+      </div>
+    </section>
+
+    <div style="display: flex; align-items: center; gap: 12px">
+      <span style="background: #5fc59e; color: #14233a; font-weight: 900; font-size: 16px; letter-spacing: .12em; padding: 10px 18px; border-radius: 999px">DÉPART</span>
+      <svg aria-hidden="true" width="40" height="20" viewBox="0 0 40 20" fill="none"><path d="M2 10h32M26 3l8 7-8 7" stroke="#5fc59e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+
+    <div style="position: relative">
+      <svg aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1000 60" style="position: absolute; left: 0; top: 4px; width: 100%; height: 60px" fill="none"><path d="M0 30 Q 62 0 125 30 T 250 30 T 375 30 T 500 30 T 625 30 T 750 30 T 875 30 T 1000 30" stroke="#5fc59e" stroke-width="5" stroke-dasharray="14 12" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
+
+      <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 28px; align-items: start">
+
+        <a class="case" href="orientascan.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: flex-start">
+          <span data-s="c1.discStyle">1</span>
+          <span data-s="c1.cardStyle">
+            <div data-if="c1.rec" style="display:contents"><span style="align-self: flex-start; background: #f39008; color: #14233a; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px">★ Conseillé pour toi</span></div>
+            <span style="font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase">Je fais le point</span>
+            <span style="font-size: 23px; font-weight: 900; line-height: 1.15">Je ne sais pas par où commencer</span>
+            <span data-s="c1.toolStyle">Orientascan</span>
+            <span style="font-size: 15px; font-weight: 500; line-height: 1.45">Tu réponds à quelques questions sur ta situation et tu reçois des pistes. Sans inscription.</span>
+            <span data-s="c1.ctaStyle">Comment ça marche ? →</span>
+          </span>
+        </a>
+
+        <a class="case" href="video-box.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: flex-start; padding-top: 70px">
+          <span data-s="c2.discStyle">2</span>
+          <span data-s="c2.cardStyle">
+            <div data-if="c2.rec" style="display:contents"><span style="align-self: flex-start; background: #f39008; color: #14233a; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px">★ Conseillé pour toi</span></div>
+            <span style="font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase">Je découvre</span>
+            <span style="font-size: 23px; font-weight: 900; line-height: 1.15">Je veux voir des métiers en vrai</span>
+            <span data-s="c2.toolStyle">Vidéo box</span>
+            <span style="font-size: 15px; font-weight: 500; line-height: 1.45">Des vidéos sur les métiers, les astuces pour trouver un job et les savoir-être.</span>
+            <span data-s="c2.ctaStyle">Comment ça marche ? →</span>
+          </span>
+        </a>
+
+        <a class="case" href="infos-metiers.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: flex-start">
+          <span data-s="c3.discStyle">3</span>
+          <span data-s="c3.cardStyle">
+            <div data-if="c3.rec" style="display:contents"><span style="align-self: flex-start; background: #f39008; color: #14233a; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px">★ Conseillé pour toi</span></div>
+            <span style="font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase">Je m'informe</span>
+            <span style="font-size: 23px; font-weight: 900; line-height: 1.15">Je veux tout savoir sur un métier</span>
+            <span data-s="c3.toolStyle">Infos Métiers</span>
+            <span style="font-size: 15px; font-weight: 500; line-height: 1.45">Les fiches métiers du Forem : tâches, conditions de travail, formations pour y arriver.</span>
+            <span data-s="c3.ctaStyle">Comment ça marche ? →</span>
+          </span>
+        </a>
+
+        <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 26px">
+          <span style="align-self: flex-start; background: #ffffff; color: #14233a; font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 14px; border-radius: 10px">4 · Deux chemins possibles</span>
+
+          <a class="case" href="catalogue.html" data-s="c4a.cardStyle">
+            <div data-if="c4a.rec" style="display:contents"><span style="align-self: flex-start; background: #14233a; color: #ffffff; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px">★ Conseillé pour toi</span></div>
+            <span style="display: flex; align-items: center; gap: 12px">
+              <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3z"></path><path d="M21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"></path></svg>
+              <span style="font-size: 21px; font-weight: 900; line-height: 1.15">Je cherche une formation</span>
+            </span>
+            <span style="font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase">Catalogue wallon des formations</span>
+            <span style="font-size: 15px; font-weight: 600; line-height: 1.4">Toutes les formations en Wallonie, à trier par lieu, durée ou objectif.</span>
+          </a>
+
+          <a class="case" href="mesetudes.html" data-s="c4b.cardStyle">
+            <div data-if="c4b.rec" style="display:contents"><span style="align-self: flex-start; background: #f39008; color: #14233a; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px">★ Conseillé pour toi</span></div>
+            <span style="display: flex; align-items: center; gap: 12px">
+              <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg>
+              <span style="font-size: 21px; font-weight: 900; line-height: 1.15">Je veux faire des études</span>
+            </span>
+            <span style="font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase">mesetudes.be</span>
+            <span style="font-size: 15px; font-weight: 600; line-height: 1.4">Les études supérieures : hautes écoles, universités, cours pour adultes.</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
+      <div style="flex: 999 1 520px; background: #f39008; color: #14233a; border-radius: 22px; padding: 22px 26px; display: flex; align-items: center; gap: 18px">
+        <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#14233a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"></path><path d="M5 4h12l-2 4 2 4H5"></path></svg>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <strong style="font-size: 22px; font-weight: 900; text-transform: uppercase">Arrivée : un projet qui te ressemble</strong>
+          <span style="font-size: 16px; font-weight: 600; line-height: 1.4">Pour la suite, un conseiller peut t'accompagner. Lève la main !</span>
+        </div>
+      </div>
+      <div style="flex: 1 1 320px; border: 2px solid #68c8f1; border-radius: 22px; padding: 20px 24px; display: flex; align-items: center; gap: 16px">
+        <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#68c8f1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+        <span style="font-size: 16px; font-weight: 600; line-height: 1.4">Avant de partir : déconnecte-toi de tes comptes et ferme la fenêtre.</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+class DCLogic{constructor(){this.state={};this.props={}}setState(o){Object.assign(this.state,o);render()}}
+
+class Component extends DCLogic {
+  renderVals() {
+    var self = this;
+    var sel = (this.state && this.state.sel) || null;
+    var PROFILS = [
+      { id: 'ecole', label: "Je sors de l'école", outils: ['scan', 'video', 'etudes'],
+        conseil: "Commence par l'Orientascan pour faire le point, puis découvre des métiers en vidéo." },
+      { id: 'emploi', label: 'Je cherche un emploi', outils: ['scan', 'fiche', 'form'],
+        conseil: "Lis la fiche du métier qui t'intéresse, puis cherche une formation si c'est nécessaire." },
+      { id: 'change', label: 'Je veux changer de métier', outils: ['scan', 'video', 'fiche', 'form'],
+        conseil: "Fais le point avec l'Orientascan, découvre de nouveaux métiers en vidéo, puis lis leur fiche." },
+      { id: 'etudes', label: 'Je veux reprendre des études', outils: ['etudes', 'fiche', 'scan'],
+        conseil: "Regarde à quels métiers mènent les études qui te tentent, puis trouve l'école sur mesetudes.be." },
+      { id: 'curieux', label: 'Je suis juste curieux·se', outils: ['video', 'fiche'],
+        conseil: "Laisse-toi surprendre : ouvre la Vidéo box et choisis un métier au hasard !" }
+    ];
+    var profil = null;
+    PROFILS.forEach(function (p) { if (p.id === sel) profil = p; });
+
+    var chipBase = 'font-family: inherit; font-size: 17px; font-weight: 700; padding: 12px 18px; border-radius: 999px; cursor: pointer; min-height: 48px; ';
+    var profils = PROFILS.map(function (p) {
+      var on = p.id === sel;
+      return {
+        label: p.label,
+        pressed: on ? 'true' : 'false',
+        chipStyle: chipBase + (on
+          ? 'background: #68c8f1; color: #14233a; border: 2px solid #68c8f1;'
+          : 'background: transparent; color: #ffffff; border: 2px solid rgba(255,255,255,.6);'),
+        pick: function () { self.setState({ sel: p.id }); }
+      };
+    });
+
+    function etat(id) {
+      var rec = !!profil && profil.outils.indexOf(id) >= 0;
+      return { rec: rec, dim: !!profil && !rec };
+    }
+    function grandeCase(id, color) {
+      var e = etat(id);
+      var accent = e.dim ? '#5b6a84' : color;
+      return {
+        rec: e.rec,
+        discStyle: 'width: 68px; height: 68px; border-radius: 50%; border: 5px solid #14233a; font-weight: 900; font-size: 32px; display: flex; align-items: center; justify-content: center; margin-left: 20px; position: relative; z-index: 1; '
+          + 'background: ' + accent + '; color: ' + (e.dim ? '#ffffff' : '#14233a') + ';',
+        cardStyle: 'margin-top: -24px; width: 100%; box-sizing: border-box; border-radius: 24px; padding: 36px 22px 22px; display: flex; flex-direction: column; gap: 10px; min-height: 330px; '
+          + 'border-top: 10px solid ' + accent + '; '
+          + (e.dim ? 'background: #2c3c58; color: #dfe4ec;' : 'background: #ffffff; color: #14233a;')
+          + (e.rec ? ' box-shadow: 0 0 0 4px #f39008;' : ''),
+        toolStyle: 'align-self: flex-start; font-size: 13px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; border-radius: 8px; '
+          + (e.dim ? 'background: #3d4e6c; color: #dfe4ec;' : 'background: ' + color + '; color: #14233a;'),
+        ctaStyle: 'margin-top: auto; align-self: flex-start; font-weight: 800; font-size: 16px; padding: 12px 20px; border-radius: 999px; '
+          + (e.dim ? 'background: #3d4e6c; color: #ffffff;' : 'background: #14233a; color: #ffffff;')
+      };
+    }
+    function petiteCase(id, bg) {
+      var e = etat(id);
+      return {
+        rec: e.rec,
+        cardStyle: 'text-decoration: none; border-radius: 22px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; '
+          + (e.dim ? 'background: #2c3c58; color: #dfe4ec;' : 'background: ' + bg + '; color: #14233a;')
+          + (e.rec ? ' box-shadow: 0 0 0 4px #f39008;' : '')
+      };
+    }
+
+    return {
+      profils: profils,
+      hasSel: !!profil,
+      conseil: profil ? profil.conseil : '',
+      reset: function () { self.setState({ sel: null }); },
+      c1: grandeCase('scan', '#68c8f1'),
+      c2: grandeCase('video', '#f39008'),
+      c3: grandeCase('fiche', '#5fc59e'),
+      c4a: petiteCase('form', '#a58cc4'),
+      c4b: petiteCase('etudes', '#ffffff')
+    };
+  }
+}
+
+const comp=new Component();
+const get=(o,p)=>p.split('.').reduce((a,k)=>a==null?a:a[k],o);
+function render(){
+  const v=comp.renderVals();
+  document.querySelectorAll('[data-s]').forEach(e=>{e.style.cssText=get(v,e.dataset.s)});
+  document.querySelectorAll('[data-if]').forEach(e=>{e.style.display=get(v,e.dataset.if)?'contents':'none'});
+  document.querySelectorAll('[data-t]').forEach(e=>{e.textContent=get(v,e.dataset.t)});
+  document.querySelectorAll('[data-click]').forEach(e=>{e.onclick=get(v,e.dataset.click)});
+  const box=document.getElementById('chips');const had=document.activeElement&&box.contains(document.activeElement)?document.activeElement.textContent:null;
+  box.textContent='';
+  v.profils.forEach(p=>{const x=document.createElement('button');x.className='chip';x.type='button';
+    x.setAttribute('aria-pressed',p.pressed);x.style.cssText=p.chipStyle;x.textContent=p.label;x.onclick=p.pick;box.appendChild(x);
+    if(had===p.label)x.focus()});
+}
+render();
+</script>
+</body>
+</html>
