@@ -102,8 +102,8 @@ a{color:#14233a}a:hover{color:#14233a}
           </span>
         </a>
 
-        <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 26px">
-          <span style="align-self: flex-start; background: #ffffff; color: #14233a; font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 14px; border-radius: 10px">4 · Deux chemins possibles</span>
+        <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 0">
+          <span style="display: flex; align-items: center; gap: 14px"><span data-s="c4d.discStyle">4</span><span style="font-weight: 900; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: #ffffff; background: #14233a; padding: 4px 8px; border-radius: 8px; line-height: 1.3">Deux chemins possibles</span></span>
 
           <a class="case" href="catalogue.html" data-s="c4a.cardStyle">
             <div data-if="c4a.rec" style="display:contents"><span style="align-self: flex-start; background: #14233a; color: #ffffff; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px">★ Conseillé pour toi</span></div>
@@ -221,7 +221,12 @@ class Component extends DCLogic {
       c2: grandeCase('video', '#5fc59e'),
       c3: grandeCase('fiche', '#5fc59e'),
       c4a: petiteCase('form', '#68c8f1'),
-      c4b: petiteCase('etudes', '#68c8f1')
+      c4b: petiteCase('etudes', '#68c8f1'),
+      c4d: (function () {
+        var dim = etat('form').dim && etat('etudes').dim;
+        return { discStyle: 'flex: none; width: 68px; height: 68px; border-radius: 50%; border: 5px solid #14233a; font-weight: 900; font-size: 32px; display: flex; align-items: center; justify-content: center; margin-left: 20px; position: relative; z-index: 1; box-sizing: content-box; '
+          + 'background: ' + (dim ? '#5b6a84' : '#68c8f1') + '; color: ' + (dim ? '#ffffff' : '#14233a') + ';' };
+      })()
     };
   }
 }
